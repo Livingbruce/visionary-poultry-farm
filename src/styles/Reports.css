@@ -1,0 +1,101 @@
+.reports-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.page-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+/* Full Width Column Stack Layout */
+.reports-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* Clickable Full-Width Card Styling */
+.report-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+}
+
+.report-card:hover {
+  transform: translateX(4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.card-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.icon-badge {
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Category Color Accents */
+.report-card.sales .icon-badge { background-color: #dcfce7; color: #15803d; }
+.report-card.purchases .icon-badge { background-color: #fef3c7; color: #b45309; }
+.report-card.debtors .icon-badge { background-color: #e0e7ff; color: #4338ca; }
+.report-card.creditors .icon-badge { background-color: #fee2e2; color: #b91c1c; }
+.report-card.expenses .icon-badge { background-color: #ffedd5; color: #c2410c; }
+.report-card.performance .icon-badge { background-color: #e0f2fe; color: #0369a1; }
+
+.card-info h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.card-info p {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Right Arrow Indicator & Animation */
+.arrow-wrapper {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.report-card:hover .arrow-wrapper {
+  color: #1b4332;
+  transform: translateX(4px);
+}

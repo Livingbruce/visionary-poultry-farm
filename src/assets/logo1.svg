@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+
+    <!-- Primary Accent Gradient (Amber / Visionary Sunburst) -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <!-- Green Emerald Gradient (Growth & Finance) -->
+    <linearGradient id="greenGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#1B4332" />
+      <stop offset="50%" stop-color="#2D6A4F" />
+      <stop offset="100%" stop-color="#52B788" />
+    </linearGradient>
+
+    <!-- Metallic/Gold Accent -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+
+    <!-- Soft Drop Shadow Filter -->
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Circular Outer Badge Base -->
+  <circle cx="250" cy="250" r="230" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="4" filter="url(#dropShadow)" />
+  
+  <!-- Outer Decorative Ring -->
+  <circle cx="250" cy="250" r="215" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="6,6" />
+
+  <!-- Visionary Crest & Analytics Combo Graphic -->
+  <g transform="translate(0, -10)">
+    
+    <!-- Rising Financial Bar Chart Background (Integrated as Wings/Feathers) -->
+    <g id="financial-bars" opacity="0.85">
+      <!-- Bar 1 -->
+      <rect x="155" y="270" width="22" height="60" rx="4" fill="url(#greenGrad)" />
+      <!-- Bar 2 -->
+      <rect x="187" y="235" width="22" height="95" rx="4" fill="url(#greenGrad)" />
+      <!-- Bar 3 -->
+      <rect x="219" y="190" width="22" height="140" rx="4" fill="url(#greenGrad)" />
+      <!-- Bar 4 -->
+      <rect x="251" y="150" width="22" height="180" rx="4" fill="url(#greenGrad)" />
+      <!-- Bar 5 -->
+      <rect x="283" y="120" width="22" height="210" rx="4" fill="url(#greenGrad)" />
+    </g>
+
+    <!-- Stylized Rooster Head & Crest Silhouette -->
+    <g id="rooster-profile" filter="url(#dropShadow)">
+      <!-- Rooster Comb / Flame (Vision Rays) -->
+      <path d="M 230 115 C 235 90, 255 80, 260 65 C 265 85, 275 90, 280 110 C 290 85, 310 95, 305 125 Z" fill="url(#accentGrad)" />
+
+      <!-- Head & Beak Silhouette -->
+      <path d="M 195 240 C 195 160, 265 145, 275 145 C 310 145, 325 180, 325 210 C 325 245, 305 260, 290 270 C 280 277, 275 295, 275 320 L 195 320 Z" fill="#F8FAFC" />
+
+      <!-- Beak (Gold/Amber Accent) -->
+      <path d="M 320 185 L 350 205 L 315 220 Z" fill="url(#goldGrad)" />
+
+      <!-- Wattle -->
+      <path d="M 310 225 C 325 235, 320 260, 300 255 Z" fill="url(#accentGrad)" />
+
+      <!-- Visionary Eye Element (Iris & Pupil) -->
+      <circle cx="270" cy="185" r="14" fill="#0F172A" />
+      <circle cx="270" cy="185" r="7" fill="url(#accentGrad)" />
+      <circle cx="273" cy="182" r="2.5" fill="#FFFFFF" />
+    </g>
+
+    <!-- Upward Growth Arrow Trajectory (Representing Profit & Analytics) -->
+    <path d="M 140 310 Q 230 250 345 130" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-linecap="round" />
+    <path d="M 345 130 L 325 135 M 345 130 L 340 150" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+
+    <!-- Ledger Base Line -->
+    <rect x="140" y="328" width="220" height="6" rx="3" fill="#64748B" />
+  </g>
+
+  <!-- Brand Typography Curved/Centered -->
+  <text x="250" y="390" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="22" fill="#F8FAFC" text-anchor="middle" letter-spacing="4">
+    VISIONARY
+  </text>
+  <text x="250" y="415" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="14" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="3">
+    POULTRY ACCOUNTS
+  </text>
+</svg>
