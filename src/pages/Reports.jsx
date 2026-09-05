@@ -1,65 +1,35 @@
-import React from 'react';
-import { 
-  TrendingUp, 
-  ShoppingBag, 
-  Users, 
-  CreditCard, 
-  Receipt, 
-  Activity, 
-  ChevronRight 
-} from 'lucide-react';
+import { useState } from 'react';
+import { ChevronRight } from 'lucide-react';
+import { reportTypes } from '../components/ReportCards';
+import SalesReport from './reports/SalesReport';
+import PurchaseReport from './reports/PurchaseReport';
+import DebtorsReport from './reports/DebtorsReport';
+import CreditorsReport from './reports/CreditorsReport';
+import ExpenseReport from './reports/ExpenseReport';
+import PerformanceReport from './reports/PerformanceReport';
 import '../styles/Reports.css';
 
 export default function Reports() {
-  const reportTypes = [
-    {
-      id: 'sales-report',
-      title: 'Sales Report',
-      description: 'View sales reports for your poultry farm.',
-      icon: TrendingUp,
-      colorClass: 'sales'
-    },
-    {
-      id: 'purchases-report',
-      title: 'Purchases Report',
-      description: 'View purchases reports for your poultry farm.',
-      icon: ShoppingBag,
-      colorClass: 'purchases'
-    },
-    {
-      id: 'debtors-report',
-      title: 'Debtors Report',
-      description: 'View debtors reports for your poultry farm.',
-      icon: Users,
-      colorClass: 'debtors'
-    },
-    {
-      id: 'creditors-report',
-      title: 'Creditors Report',
-      description: 'View creditors reports for your poultry farm.',
-      icon: CreditCard,
-      colorClass: 'creditors'
-    },
-    {
-      id: 'expenses-report',
-      title: 'Expenses Report',
-      description: 'View expenses reports for your poultry farm.',
-      icon: Receipt,
-      colorClass: 'expenses'
-    },
-    {
-      id: 'performance-report',
-      title: 'Farm Performance Report',
-      description: 'View performance reports for your poultry farm.',
-      icon: Activity,
-      colorClass: 'performance'
-    }
-  ];
-
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  
   const handleCardClick = (reportId) => {
-    // Logic for opening/generating specific report will go here
     console.log(`Report clicked: ${reportId}`);
+    setSelectedCategory(reportId);
   };
+
+  if (selectedCategory === 'sales-report') {
+    return <SalesReport setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} />
+  } else if (selectedCategory === 'purchases-report') {
+    return <PurchaseReport setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} />
+  } else if (selectedCategory === 'debtors-report') {
+    return <DebtorsReport selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+  } else if (selectedCategory === 'creditors-report') {
+    return <CreditorsReport selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+  } else if (selectedCategory === 'expenses-report') {
+    return <ExpenseReport selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+  } else if (selectedCategory === 'performance-report') {
+    return <PerformanceReport selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+  }
 
   return (
     <div className="page reports-container">

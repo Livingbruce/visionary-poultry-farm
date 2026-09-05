@@ -1,34 +1,24 @@
-import React from 'react';
-import { ArrowRight, Folder, UserPlus, Users, Banknote, ClipboardList } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { folders } from '../components/StaffFolders';
+import StaffManagement from './staff/StaffManagement';
+import StaffOnboarding from './staff/Onboarding';
+import PerformanceLog from './staff/PerformanceLogs';
+import StaffSalary from './staff/StaffSalary';
 import '../styles/Staff.css';
 
-function Staff({ onSelectCategory }) {
-  const folders = [
-    {
-      id: 'onboarding',
-      title: 'Onboarding',
-      desc: 'Add new owners, staff, and auditors.',
-      icon: UserPlus,
-    },
-    {
-      id: 'manage',
-      title: 'Manage Staff',
-      desc: 'Manage staff, auditors, leaves, layoffs, halts, etc.',
-      icon: Users,
-    },
-    {
-      id: 'salaries',
-      title: 'Salaries',
-      desc: 'Manage farm employees wages & salaries here.',
-      icon: Banknote,
-    },
-    {
-      id: 'performance',
-      title: 'Performance Logs',
-      desc: 'Supervise employee activities in the system.',
-      icon: ClipboardList,
-    },
-  ];
+function Staff() {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  if (selectedCategory === 'onboarding') {
+    return <StaffOnboarding selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+  } else if (selectedCategory === 'manage') {
+    return <StaffManagement selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+  } else if (selectedCategory === 'salaries') {
+    return <StaffSalary selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+  } else if (selectedCategory === 'performance') {
+    return <PerformanceLog selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+  }
 
   return (
     <div className="page staff-page">
@@ -77,7 +67,7 @@ function Staff({ onSelectCategory }) {
               <div
                 key={item.id}
                 className="folder-row"
-                onClick={() => onSelectCategory && onSelectCategory(item.id)}
+                onClick={() => setSelectedCategory && setSelectedCategory(item.id)}
               >
                 <div className="folder-icon-wrapper">
                   <IconComponent size={20} className="folder-icon" />

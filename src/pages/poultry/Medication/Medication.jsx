@@ -35,7 +35,6 @@ function Medication({ setSelectedCategory }) {
     }
 
     if (editingId) {
-      // Update existing record
       setRecords((prev) =>
         prev.map((rec) =>
           rec.id === editingId
