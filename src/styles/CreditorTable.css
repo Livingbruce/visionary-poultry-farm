@@ -98,10 +98,6 @@
   outline: none;
 }
 
-.creditor-header input[type="date"]:focus {
-  border-color: #2563eb;
-}
-
 /* Table Wrapper */
 .table-wrapper {
   width: 100%;
@@ -118,16 +114,18 @@
 
 .creditor-table th,
 .creditor-table td {
-  padding: 0;
+  padding: 0 !important;
+  margin: 0 !important;
   border: 1px solid #cbd5e1;
   vertical-align: middle;
+  height: 2.25rem;
 }
 
 .creditor-table th {
   background-color: #e2e8f0;
   color: #1e293b;
   font-weight: 700;
-  padding: 0.5rem;
+  padding: 0.5rem !important;
   text-transform: uppercase;
   font-size: 0.725rem;
   letter-spacing: 0.04em;
@@ -140,6 +138,7 @@
   font-weight: 600;
   color: #64748b;
   width: 3rem;
+  padding: 0 !important;
 }
 
 .creditor-table tbody tr {
@@ -150,7 +149,6 @@
   background-color: #f8fafc;
 }
 
-/* Selected Row Grid State */
 .creditor-table tbody tr.selected-row {
   background-color: #e0f2fe !important;
 }
@@ -160,19 +158,19 @@
   color: #ffffff;
 }
 
-/* Highlight rows originating from Purchases DB */
 .creditor-table tbody tr.cred-purchase-row {
   background-color: #fffbe8;
 }
 
-/* Inputs & Selects Grid Integration */
+/* Full Cell Grid Inputs & Selects (Zero Padding/Margin, Full Span) */
 .creditor-table input[type="text"],
 .creditor-table input[type="number"],
 .creditor-table select {
   width: 100%;
   height: 100%;
   min-height: 2.25rem;
-  padding: 0.375rem 0.5rem;
+  padding: 0 0.5rem !important;
+  margin: 0 !important;
   border: none;
   border-radius: 0;
   font-size: 0.85rem;
@@ -181,6 +179,7 @@
   box-sizing: border-box;
   outline: none;
   font-family: inherit;
+  display: block;
 }
 
 .creditor-table input:focus,
@@ -207,11 +206,12 @@
 .creditor-table tfoot .totals-row td {
   background-color: #f1f5f9;
   color: #0f172a;
-  padding: 0.5rem;
+  padding: 0.5rem !important;
   border-top: 2px solid #94a3b8;
   font-family: monospace;
   font-size: 0.9rem;
   text-align: right;
+  height: auto;
 }
 
 /* Footer Action Buttons */
@@ -262,4 +262,73 @@
 
 .btn-success:hover {
   background-color: #15803d;
+}
+
+/* Clean Settlement Modal Styles */
+.settle-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.settle-modal-card {
+  background: #ffffff;
+  padding: 1.75rem;
+  border-radius: 0.5rem;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #cbd5e1;
+}
+
+.settle-modal-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  color: #0f172a;
+}
+
+.settle-modal-card label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.settle-modal-card input,
+.settle-modal-card select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  color: #0f172a;
+  background-color: #f8fafc;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.settle-modal-card input:focus,
+.settle-modal-card select:focus {
+  border-color: #2563eb;
+  background-color: #ffffff;
+}
+
+.settle-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
